@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Weather API</title>
+    <!--
+      Various script tags needed for jquery, chart.js, and other linked files
+    -->
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    
+  </head>
+  <body>
+    <div class="top-stuff">
+      <div class="search-stuff">
+        <img class= "sun-gif" id="gif" src="file:///C:/Users/Erik/Downloads/CuteSun.gif" alt="Rolley Polley Sun">
+        <p class="blink">
+          Look up a city to find out the weather!
+        </p>
+        <p>
+          Disclaimer! Please type the city name like these examples: Portland, New York
+        </p>
+        <p>
+          City:<input class="text-area" id="city"></input>
+          <button class="button" onclick="citySearch()" id="submit" style="font-size: 20px;" >search</button>
+        </p>
+      </div>
+    </div>
+    <div class="weather-box">
+      <img class="icon" width="60" height="60">
+      <p class="weather"></p>
+      <p class="temp"></p>
+      <p class="tempMax" type="text"></p>
+      <p class="tempMin"></p>
+    </div>
+    <div class="container-container">
+      <div class="weather-safety">
+        <h1>Weather Safety Tips!</h1>
+        <ol>
+          <li>The space underneath a stairwell could be used as a shelter</li><br/>
+          <li>Store an emergency supply of food and water</li><br/>
+          <li>Develop an emergency plan for you and your family</li><br/>
+          <li>Know your risks of possible weather storms in your region</li><br/>
+          <li>Learn CPR and emergency first aid to assist yourself and others</li><br/>
+          <li>Know your community's warning systems</li>
+        </ol>
+      </div>
+      <div class="weather-facts">
+        <h1>Cool Weather Facts! </h1>
+        <ol>
+          <li>Mild autumn weather often means bigger spiders in our homes</li><br/>
+          <li>About 2,000 thunderstorms rain down on Earth every minute</li><br/>
+          <li>Wildfires sometimes create tornadoes made of fire called fire whirls</li><br/>
+          <li>In July 2001 the rainfall in Kerala, India, was blood red</li><br/>
+          <li>The South Pole is the least sunny place on the globe</li><br/>
+          <li>A thunderstorm can produce 160kmph winds</li>
+        </ol>
+      </div>
+      <div class="chart-container">
+        <canvas id="barChart" width="600" height="500"></canvas>
+      </div>
+    </div>
+    <p class="link1"><a href="https://www.weather.gov/safety/" target="_blank">National Weather Service</a></p>
+    <p class="link2"><a href="https://earth.nullschool.net/" target="_blank">Earth Wind Mapping</a></p>
+  </body>
+</html>
