@@ -45,7 +45,7 @@ function load(city)
 function stuff(data)
 {
     //Locating the information
-    var icon = "http://api.openweathermap.org/img/w/" + data.weather[0].icon + ".png";
+    var icon = "https://api.openweathermap.org/img/w/" + data.weather[0].icon + ".png";
     var temp = Math.floor(data.main.temp);
     var tempMin = Math.floor(data.main.temp_min);
     var tempMax = Math.floor(data.main.temp_max);
