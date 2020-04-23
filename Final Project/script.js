@@ -32,7 +32,7 @@ function load(city)
     
     //Ajax call
     $.ajax({
-        url: "http://api.openweathermap.org/data/2.5/weather?q="+ city + "&units=imperial&appid=e7d6164084582578d9c82cdb400430e7",
+        url: "https://api.openweathermap.org/data/2.5/weather?q="+ city + "&units=imperial&appid=e7d6164084582578d9c82cdb400430e7",
         type: "GET",
         dataType: "json",
         success: stuff
