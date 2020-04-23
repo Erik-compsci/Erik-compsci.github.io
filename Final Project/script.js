@@ -1,5 +1,8 @@
 var city;
 
+/**
+ * This function will get the user input from the button click and load it into the ajax call function
+ */
 function citySearch()
 {
     console.log('search');
@@ -14,10 +17,16 @@ function citySearch()
  */
 function loadPage()
 {
+    /**
+     * Hides the icon and it's placeholder 
+     */
     $('.icon').hide();
     //load("Portland");
 }
-
+/**
+ * This function will make the ajax call to the website in order to find information
+ * @param {city} city is the location that the user is looking up in the input field
+ */
 function load(city)
 {
     
@@ -29,7 +38,10 @@ function load(city)
         success: stuff
     });
 }
-
+/**
+ * This function will store data and format it to be viable to be sent onto the webpage
+ * @param {data} data is the json information that will be passed through via the ajax call 
+ */
 function stuff(data)
 {
     //Locating the information
@@ -47,17 +59,23 @@ function stuff(data)
     $('.tempMax').text("Today's High: " + tempMax);
     $('.tempMin').text("Today's Low: " + tempMin);
 
+    //calls the function makeChart with the following parameter
     makeChart([temp, tempMin, tempMax]);
 };
 
+/**
+ * This function will create a bar chart to certain specs that will house the json data passed into it
+ * @param {dataPoints} dataPoints are the json data that will be shown on the bar chart
+ */
 function makeChart(dataPoints)
 {
+    //checks to see if a chart is already created
     if(typeof myChart !== "undefined")
     {
-        console.log(myChart);
+        //Will destroy the old chart to make way for the next user input
         myChart.destroy();
     }   
-
+    //actual creation of the chart
     var ctx = document.getElementById('barChart').getContext('2d');
     myChart = new Chart(ctx, {
         type: 'bar',
@@ -103,3 +121,4 @@ function makeChart(dataPoints)
  *  Generates funtion once a search has been made
  */
 $(document).ready(loadPage);
+
